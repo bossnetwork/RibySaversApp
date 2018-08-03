@@ -10,6 +10,7 @@ import { UserService } from './models/user.service';
 import { SavingPlansService } from './models/saving-plans.service';
 import { CreditWalletService } from './models/credit-wallet.service';
 import { AuthService } from './models/auth.service';
+import { CookieService } from 'angular2-cookie/services/cookies.service'
 
 import { SavingsListComponent } from './savings-list/savings-list.component';
 import { SavingFormComponent } from './saving-form/saving-form.component';
@@ -35,7 +36,7 @@ import { AuthenticateUserComponent } from './authenticate-user/authenticate-user
     HttpClientModule,
     FormsModule
   ],
-  providers: [UserService,SavingPlansService,CreditWalletService,AuthService],
+  providers: [UserService,SavingPlansService,CreditWalletService,AuthService,CookieService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

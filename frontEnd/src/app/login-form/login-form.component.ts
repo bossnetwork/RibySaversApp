@@ -6,6 +6,8 @@ import { User } from '../models/user.model';
 import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
 
+import { CookieService } from 'angular2-cookie/core'
+
 declare var M : any;
 @Component({
   selector: 'app-login-form',
@@ -17,7 +19,7 @@ export class LoginFormComponent implements OnInit {
   users : User[];
   user : User;
 
-  constructor(private userService : UserService,private router: Router) { }
+  constructor(private userService : UserService,private router: Router,private cookieService:CookieService) { }
   resetForm(form?:NgForm){
     this.user = {
       name:"",
@@ -41,6 +43,7 @@ export class LoginFormComponent implements OnInit {
         });
       }else{
          this.resetForm(form)
+         this.cookieService.put('payload',main.payload);
          M.toast({
           html:`<p>${main.message}</p>`,
           classes:"rounder"
