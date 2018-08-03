@@ -1,0 +1,19 @@
+{
+  "name": "ribysaversapp",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "nodemon ./serverSide/bin/www"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/devMiracle/RibySaversApp.git"
+  },
+  "author": "Chuks Emeka Miracle Okafor",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/devMiracle/RibySaversApp/issues"
+  },
+  "homepage": "https://github.com/devMiracle/RibySaversApp#readme"
+}
