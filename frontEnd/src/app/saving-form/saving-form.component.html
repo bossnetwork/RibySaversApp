@@ -7,20 +7,31 @@
             <div class="col s12">
                 <span class="card-title"><h4>Create Plan</h4></span>
               <form #savingPlanForm="ngForm" (ngSubmit)="savingPlanSubmit(savingPlanForm)">
-                <div class="row">
+                <!-- <div class="row">
                   <div class="input-field col s12">
-                    <input placeholder="Enter Name" name="name"  required>
+                    <input type="text" name="user_id" [ngModel]="saving?.user_id"  required>
                   </div>
                 </div>
                 <div class="row">
                   <div class="input-field col s12">
-                    <input placeholder="Enter Amount" name="amount" type="number" required>
+                    <input name="token" [ngModel]="saving?.token"  required>
+                  </div>
+                </div> -->
+                <div class="row">
+                  <div class="input-field col s12">
+                    <input placeholder="Enter Name" name="name" [ngModel]="saving?.name"  required>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="input-field col s12">
+                    <input placeholder="Enter Amount" name="amount" [ngModel]="saving?.amount"  type="number" required>
                   </div>
                 </div>
                 <div class="row">
                     <label>Select Duration</label>
-                    <select name="duration" [ngModel]="saving?.duration" class="browser-default">
+                    <select name="duration" [ngModel]="saving?.durations" class="browser-default">
                       <option value="" disabled selected>Choose your option</option>
+                      <option *ngFor="let obj of durations" [ngValue]="obj.id">{{obj.name}}</option>
                     </select>
                 </div>
                
